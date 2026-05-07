@@ -1,0 +1,36 @@
+.next/
+dist/
+node_modules/
+.turbo/
+.eslintcache
+*.pem
+.env
+.env.local
+.env.*.local
+
+# Mac
+.DS_Store
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Misc
+.env.*.local
+!.env.example
+
+# Cache
+.vercel
+.turbo
+dist

@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-yellow: #FFF58A;
+  --brand-pink: #f472b6;
+  --brand-purple: #a78bfa;
+  --brand-blue: #60a5fa;
+
+  --bg-main: rgba(167, 139, 250, 0.08);
+  --bg-section: rgba(244, 114, 182, 0.10);
+  --bg-card: rgba(255, 255, 255, 0.60);
+  --border-soft: rgba(167, 139, 250, 0.25);
+  --border-strong: rgba(167, 139, 250, 0.50);
+  --action-primary: var(--brand-purple);
+  --action-secondary: var(--brand-blue);
+  --state-success: #34d399;
+  --state-error: var(--brand-pink);
+  --state-disabled: rgba(167, 139, 250, 0.30);
+  --focus-ring: rgba(167, 139, 250, 0.45);
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --surface-card: rgba(255, 255, 255, 0.65);
+  --surface-muted: rgba(255, 255, 255, 0.50);
+  --surface-strong: #ffffff;
+  --shadow-soft: 0 8px 32px rgba(167, 139, 250, 0.10);
+  --shadow-strong: 0 20px 60px rgba(167, 139, 250, 0.18);
+
+  --bg-pattern: none;
+}
+
+.dark {
+  --bg-main: #0b1222;
+  --bg-section: rgba(10, 16, 30, 0.9);
+  --bg-card: rgba(18, 25, 41, 0.75);
+  --surface-card: rgba(18, 25, 41, 0.80);
+  --surface-muted: rgba(18, 25, 41, 0.60);
+  --surface-strong: #0f172a;
+  --border-soft: rgba(148, 163, 184, 0.20);
+  --border-strong: rgba(167, 139, 250, 0.45);
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.50);
+  --bg-pattern: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f5ff;
+  min-height: 100vh;
+  color: var(--text-main);
+  @apply dark:text-gray-50;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body,
+body.dark {
+  background-color: var(--bg-main);
+}
+
+/* Smooth transitions for interactive elements only */
+a, button, input, select, textarea {
+  @apply transition-all duration-300;
+}
+
+/* Smooth transitions for cards and containers */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.40);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.65);
+}
+
+/* Selection color */
+::selection {
+  background: var(--brand-purple);
+  color: #ffffff;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* Links */
+a {
+  color: var(--action-primary);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #8b5cf6;
+}
+
+/* Headings */
+h1 {
+  @apply text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-50;
+}
+
+h2 {
+  @apply text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50;
+}
+
+h3 {
+  @apply text-2xl font-semibold text-gray-900 dark:text-gray-50;
+}
+
+h4 {
+  @apply text-xl font-semibold text-gray-900 dark:text-gray-50;
+}
+
+h5 {
+  @apply text-lg font-semibold text-gray-900 dark:text-gray-50;
+}
+
+h6 {
+  @apply text-base font-semibold text-gray-900 dark:text-gray-50;
+}
+
+
+
+@media (max-width: 768px) {
+  .bg-layer {
+    background-attachment: scroll;
+  }
+}
+
+/* ===== Glassmorphism utility ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 0 8px 32px rgba(167, 139, 250, 0.08);
+}
+
+.dark .glass {
+  background: rgba(18, 25, 41, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.30);
+}
+
+/* Premium gradient button */
+.btn-gradient {
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  color: #ffffff;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-gradient:hover::before {
+  opacity: 1;
+}
+
+.btn-gradient > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fade-in animation on load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out both;
+}
