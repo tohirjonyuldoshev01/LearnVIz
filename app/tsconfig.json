@@ -52,7 +52,7 @@
     "allowJs": true,
     "noEmit": true,
     "incremental": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "isolatedModules": true,
     "jsx": "preserve",
     "plugins": [
@@ -62,7 +62,8 @@
     ]
   },
   "include": [
-    "src",
+    "next-env.d.ts",
+    "src/**/*",
     ".next/types/**/*.ts"
   ],
   "exclude": [
