@@ -3,7 +3,7 @@ import { Metadata, Viewport } from 'next';
 import { AuthProvider } from '@/context/AuthContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { SessionExpiredAlert } from '@/components/auth/SessionExpiredAlert';
-// @ts-expect-error CSS module resolution
+// @ts-ignore
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
