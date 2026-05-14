@@ -37,3 +37,8 @@ env:
     availability:
       - BUILD
       - RUNTIME
+
+      - variable: GEMINI_API_KEY
+    value: AIzaSyAYk6npt9111fM8sKRrGSnBnWjzKwOLUt0
+    availability:
+      - RUNTIME
