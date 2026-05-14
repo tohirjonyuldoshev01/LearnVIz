@@ -42,3 +42,9 @@ env:
     value: AIzaSyAYk6npt9111fM8sKRrGSnBnWjzKwOLUt0
     availability:
       - RUNTIME
+
+  - variable: NEXT_PUBLIC_API_URL
+    value: https://learnviz--learnviz-9bd8e.europe-west4.hosted.app
+    availability:
+      - BUILD
+      - RUNTIME
